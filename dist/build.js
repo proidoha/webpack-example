@@ -47,6 +47,7 @@
 	// var _ = require('underscore');
 	"use strict";
 	// import '.main.css';
+	// require("./src/css/main.css");
 
 	var _ = __webpack_require__(1);
 	var content = __webpack_require__(2);

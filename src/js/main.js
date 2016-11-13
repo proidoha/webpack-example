@@ -1,6 +1,7 @@
 // var _ = require('underscore');
 "use strict";
 // import '.main.css';
+// require("./src/css/main.css");
 var _  =  require('underscore');
 var content = require("./content");
 console.log('Hello webpack');
