@@ -1,14 +1,19 @@
+// var webpack = require('webpack');
+
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
+	context: __dirname + '/src',
     entry: {
-   build:  './src/js/main',
-   style: './src/css/main.css'
+   build:  './js/main',
+   vendor: './js/file2'
+   // style: './src/css/main.css'
    },
     output: {
-    	path: 'dist/',
+    	path: __dirname + '/dist',
         filename: '[name].js',
-        chunkFilename: "[id].js"
+        library: "[name]"
+        // chunkFilename: "[id].js"
     },
 
      module: {
@@ -41,9 +46,8 @@ modulesDirectories: ['node_modules'],
     },
 
      plugins: [
-        new ExtractTextPlugin("[name].css", {
-            allChunks: true
-        })
+        new ExtractTextPlugin("[name].css"),
+        // new webpack.optimize.UglifyJsPlugin()
     ]
 
   };

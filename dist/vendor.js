@@ -1,3 +1,4 @@
+var vendor =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -44,7 +45,11 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
+	"use strict";
+
+	var price = 10;
+
+	console.log(price);
 
 /***/ }
 /******/ ]);
