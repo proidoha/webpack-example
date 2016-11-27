@@ -1,16 +1,8 @@
-// var _ = require('underscore');
 "use strict";
-// import '.main.css';
-// require("./src/css/main.css");
-
-var _  =  require('underscore');
 
 
 let content = require("./content");
 console.log('Hello webpack');
-var a = 0;
-a++;
-// console.log(a++);
 
 // console.log(content);
 // console.log(require('./content'));
@@ -28,6 +20,14 @@ let obj = {
 
 
  obj.someFn();
+
+// Использование jquery
+
+// console.log($);
+
+$(function() {
+ $('.content').append(" <br /> Новая строка!");
+});
 
 
 

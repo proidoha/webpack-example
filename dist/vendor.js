@@ -1,2 +1,19 @@
-var app=webpackJsonpapp([1],[function(o,n,p){"use strict";p(1);n.hello=function(o){console.log("Неизвестный говорит: "+o)}}]);
+var app =
+webpackJsonpapp([2],[
+/* 0 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	// var _ = require('underscore');
+
+	var price = 10;
+
+	exports.hello = function (words) {
+
+	  console.log('Неизвестный говорит: ' + words);
+	};
+
+/***/ }
+]);
 //# sourceMappingURL=vendor.js.map
