@@ -1,5 +1,11 @@
 "use strict";
 
+var _ = require('underscore');
+
 const price = 10;
 
-console.log(price);
+exports.hello = function(words) {
+
+console.log('Неизвестный говорит: ' + words)
+}; 
+

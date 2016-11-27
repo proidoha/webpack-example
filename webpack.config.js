@@ -1,9 +1,10 @@
-// var webpack = require('webpack');
+var webpack = require('webpack');
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path =  require('path');
 
 module.exports = {
-	context: __dirname + '/src',
+	context: path.join(__dirname, 'src'),
     entry: {
    build:  './js/main',
    vendor: './js/file2'
@@ -12,19 +13,25 @@ module.exports = {
     output: {
     	path: __dirname + '/dist',
         filename: '[name].js',
-        library: "[name]"
+        library: "app"
         // chunkFilename: "[id].js"
+    },
+
+    watch: true,
+
+    watchOptions: {
+aggregateTimeout: 100
     },
 
      module: {
     loaders: [
       {
         test: /\.js$/,
-        loader: "babel",
+        loader: "babel?presets[]=es2015",
         exclude: /node_modules/,
-         query  : {
-          presets: [ 'es2015' ]
-        }
+        //  query  : {
+        //   presets: [ 'es2015' ]
+        // }
 
       },
 
@@ -45,9 +52,24 @@ modulesDirectories: ['node_modules'],
     	 moduleTemplates: ["*-webpack-loader", "*-web-loader", "*-loader", "*"]
     },
 
+    // devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
+
      plugins: [
         new ExtractTextPlugin("[name].css"),
-        // new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          // don't show unreachable variables etc
+          warnings:     false,
+          drop_console: false,
+          unsafe:       true
+        }
+        }),
+        
+        new webpack.NoErrorsPlugin(),
+
+        new webpack.optimize.CommonsChunkPlugin({
+      name: "common" })
     ]
 
   };
